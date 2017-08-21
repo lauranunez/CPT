@@ -6,11 +6,12 @@ get_header(); ?>
 
 //Para coger el nombre de la categoría de la que trata (como título)
 <header class="page-header">
+	<div class="header-taxonomia-categoria">
 $termino_actual = get_queried_object();
 $taxonomia = get_taxonomy($termino_actual->taxonomy);
 echo "<h1 class='page-title text-center'>" . $taxonomy->label . " . $termino_actual->name ."</h1>";
 ?>
-
+	</div>
 </header>
  
 <div id="main-content" class="main-content">
