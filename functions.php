@@ -98,3 +98,17 @@ function add_sidebar_custom_post() {
 add_filter( 'widgets_init', 'add_sidebar_custom_post' );
 
 ?>
+
+//Añadir nuestros posts en la página de Inicio
+
+function post_type_front ($query){
+
+if(!is_admin() && $query->is_main_query()){
+if(is_home()){
+$query->set('post_type', array('post','servicios'));
+}
+}
+
+}
+
+add_action('pre_get_posts','post_type_front');
