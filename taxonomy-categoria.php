@@ -5,6 +5,13 @@ Template Name: Archives
 get_header(); ?>
 
 //Para coger el nombre de la categoría de la que trata (como título)
+<style>//Estilos del H1 específicos para esta categoría, cambiar a tu gusto
+	div.header-taxonomia-categoria {background-image:url(img/header-taxonomia.jpg);
+	background-size:cover;
+		height:300px;
+		position:relative;
+	}
+</style>
 <header class="page-header">
 	<div class="header-taxonomia-categoria">
 $termino_actual = get_queried_object();
