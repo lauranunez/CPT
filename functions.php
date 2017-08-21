@@ -112,3 +112,19 @@ $query->set('post_type', array('post','servicios'));
 }
 
 add_action('pre_get_posts','post_type_front');
+
+
+add_filter( 'pre_get_posts', 'tgm_io_cpt_search' );
+/**
+ Función para que aparezcan los CPT en las búsquedas generales de WordPress
+*/
+
+function tgm_io_cpt_search( $query ) {
+	
+    if ( $query->is_search ) {
+	$query->set( 'post_type', array( 'noticias', 'servicios') );
+    }
+    
+    return $query;
+    
+}
