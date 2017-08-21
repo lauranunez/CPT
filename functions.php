@@ -87,3 +87,14 @@ function generate_taxonomy_rewrite_rule( $wp_rewrite ) {
   $wp_rewrite->rules = $rules + $wp_rewrite->rules;
 
 }
+
+//Añadir nuevo sidebar
+
+function add_sidebar_custom_post() {
+    if(  get_post_type() == 'servicios') {
+        return 'servicios';
+    }
+}
+add_filter( 'widgets_init', 'add_sidebar_custom_post' );
+
+?>
