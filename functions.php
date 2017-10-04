@@ -88,6 +88,8 @@ function generate_taxonomy_rewrite_rule( $wp_rewrite ) {
 
 }
 
+add_action('generate_rewrite_rules', 'generate_taxonomy_rewrite_rules');
+
 //Añadir nuevo sidebar
 
 function add_sidebar_custom_post() {
